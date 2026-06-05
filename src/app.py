@@ -48,7 +48,11 @@ class DictionaryConverterApp(ctk.CTk):
             return
 
         file_path = filedialog.askopenfilename(
-            filetypes=[("Text/CSV files", "*.tsv;*.csv;*.txt")]
+            filetypes=[
+                ("TSV files", "*.tsv"),
+                ("CSV files", "*.csv"),
+                ("Text files", "*.txt")
+            ]
         )
         if file_path:
             self.label.configure(text=f"選択中: {os.path.basename(file_path)}")
